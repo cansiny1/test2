@@ -3,6 +3,8 @@
   hosts: all
   tasks: 
     - 
-      ansible.builtin.template: 
-        dest: /home/facet/test.txt
-        src: /tmp/test.txt
+      ansible.builtin.file: 
+        group: root
+        mode: "0777"
+        owner: root
+        path: /home/facet/AnsiballZ_command.py
