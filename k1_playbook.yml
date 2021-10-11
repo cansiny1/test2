@@ -1,6 +1,6 @@
 --- 
 - 
-  hosts: tower-prod.eu.rabonet.com
+  hosts: *
   name: "Shell Examples"
   tasks: 
     - 
