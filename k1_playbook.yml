@@ -1,2 +1,12 @@
-ansible.builtin.shell: 
-  cmd: "ls -l"
+--- 
+- 
+  hosts: tower-prod.eu.rabonet.com
+  name: "Shell Examples"
+  tasks: 
+    - 
+      name: "Check Date with Shell command"
+      register: datecmd
+      shell: date
+      tags: datecmd
+    - 
+      debug: "msg=\"{{datecmd.stdout}}\""
