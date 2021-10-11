@@ -1,12 +1,17 @@
 --- 
 - 
-  hosts: tower-prod.eu.rabonet.com
+  hosts: tower-prod.wip.eu.rabonet.com
   name: "Shell Examples"
   tasks: 
     - 
-      name: "Check Date with Shell command"
-      register: datecmd
-      shell: whoami
-      tags: datecmd
+      args: 
+        chdir: /etc
+      async: 10
+      become: true
+      name: "Open /etc/passwd file"
+      poll: 0
+      register: fileout
+      shell: "cat passwd"
+      tags: fileout
     - 
-      debug: "msg=\"{{datecmd.stdout}}\""
+      debug: "msg=\"{{ fileout.stdout-lines }}\""
