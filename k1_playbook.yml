@@ -1,0 +1,8 @@
+--- 
+- 
+  hosts: all
+  tasks: 
+    - 
+      ansible.builtin.template: 
+        dest: /home/facet/test.txt
+        src: test.txt
