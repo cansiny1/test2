@@ -6,7 +6,7 @@
     - 
       name: "Check Date with Shell command"
       register: datecmd
-      shell: date
+      shell: whoami
       tags: datecmd
     - 
       debug: "msg=\"{{datecmd.stdout}}\""
