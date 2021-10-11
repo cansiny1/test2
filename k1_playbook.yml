@@ -1,4 +1,2 @@
---- 
 ansible.builtin.shell: 
   cmd: "ls -l"
-  name: "This command will change the working directory to somedir/"
