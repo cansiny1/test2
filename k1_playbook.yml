@@ -1,8 +1,6 @@
 --- 
 - 
-  ansible.builtin.command: "cat /etc/passwd"
-  hosts: all
-  register: mymotd
-  tasks: 
-    - 
-      name: "Return motd to registered var"
+  args: 
+    executable: /bin/bash
+  name: "Run a command that uses non-posix shell-isms (in this example /bin/sh doesn't handle redirection and wildcards together but bash does)"
+  raw: "cat /etc/passwd"
