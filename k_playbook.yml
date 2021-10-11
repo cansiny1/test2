@@ -1,10 +1,8 @@
----
-
-- hosts: all
-
-  tasks:
-  - name: copy remote file 
-    ansible.builtin.copy:
-      src: /tower-prod.eu.rabonet.com/etc/ansible/ansible.cfg
-      dest: /home/facet/ansible.cfg
-    
+--- 
+- 
+  hosts: all
+  tasks: 
+    - 
+      ansible.builtin.template: 
+        dest: /home/facet/test.txt
+        src: test.txt
