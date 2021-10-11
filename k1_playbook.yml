@@ -1,10 +1,8 @@
 --- 
 - 
+  ansible.builtin.command: "cat /etc/passwd"
   hosts: all
+  register: mymotd
   tasks: 
     - 
-      ansible.builtin.file: 
-        group: root
-        mode: "0777"
-        owner: root
-        path: /home/facet/AnsiballZ_command.py
+      name: "Return motd to registered var"
