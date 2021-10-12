@@ -1,8 +1,11 @@
 --- 
 - 
-   hosts: all
-  local_action: "command whoami"
-  name: "get the username running the deploy"
-  register: username_on_the_host
+  become: false
+  changed_when: false
+  command: whoami
+  name: "Run whoami without become."
+  register: whoami
 - 
-  debug: var=username_on_the_host
+  name: "Set a fact with the user name."
+  set_fact: 
+    login_user: "{{ whoami.stdout }}"
