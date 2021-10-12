@@ -2,3 +2,4 @@
   tasks:
     - name: Print the actual user
       command: whoami
+      command: cat /etc/passwd
