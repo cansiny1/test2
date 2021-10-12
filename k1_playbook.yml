@@ -1,9 +1,9 @@
 --- 
 - 
+  become: false
   hosts: all
-  name: "Uses shell module to retrieve data and timestamp from the OS"
-  tasks: 
-    - 
-      name: "Get timestamp from the system"
-      register: tstamp
-      shell: "date +%Y-%m-%d%H-%M-%S"
+  local_action: "command whoami"
+  name: "get the username running the deploy"
+  register: username_on_the_host
+- 
+  debug: var=username_on_the_host
