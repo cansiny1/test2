@@ -1,6 +1,9 @@
 --- 
 - 
-  ansible.builtin.shell: date
-  args: 
-    executable: /bin/bash
-  name: "Run a command that uses non-posix shell-isms (in this example /bin/sh doesn't handle redirection and wildcards together but bash does)"
+  hosts: all
+  name: "Uses shell module to retrieve data and timestamp from the OS"
+  tasks: 
+    - 
+      name: "Get timestamp from the system"
+      register: tstamp
+      shell: "date +%Y-%m-%d%H-%M-%S"
