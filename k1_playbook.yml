@@ -1,7 +1,6 @@
 --- 
 - 
-  become: false
-  hosts: all
+   hosts: all
   local_action: "command whoami"
   name: "get the username running the deploy"
   register: username_on_the_host
