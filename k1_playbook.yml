@@ -1,11 +1,4 @@
---- 
-- 
-  become: false
-  changed_when: false
-  command: whoami
-  name: "Run whoami without become."
-  register: whoami
-- 
-  name: "Set a fact with the user name."
-  set_fact: 
-    login_user: "{{ whoami.stdout }}"
+- hosts: server
+  tasks:
+    - name: Print the actual user
+      command: whoami
