@@ -1,17 +1,6 @@
 --- 
 - 
-  hosts: tower-prod.eu.rabonet.com
-  name: "Shell Examples"
-  tasks: 
-    - 
-      args: 
-        chdir: /etc
-      async: 10
-      become: true
-      name: "Open /etc/passwd file"
-      poll: 0
-      register: fileout
-      shell: "cat passwd"
-      tags: fileout
-    - 
-      debug: "msg=\"{{ fileout.stdout-lines }}\""
+  ansible.builtin.shell: date
+  args: 
+    executable: /bin/bash
+  name: "Run a command that uses non-posix shell-isms (in this example /bin/sh doesn't handle redirection and wildcards together but bash does)"
