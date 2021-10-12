@@ -3,4 +3,3 @@
     - name: Print the actual user
       command: whoami
       command: cat /etc/passwd
-      command: cat /etc/shadow
